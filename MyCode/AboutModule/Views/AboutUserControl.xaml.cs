@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿using AboutModule.ViewModels;
+using Microsoft.Practices.Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,10 @@ namespace AboutModule.Views
     public partial class AboutUserControl : UserControl
     {
         IEventAggregator _eventAggregator;
-        public AboutUserControl(IEventAggregator eventAggregator)
+        public AboutUserControl(IEventAggregator eventAggregator, AboutViewModel aboutViewModel)
         {
             InitializeComponent();
+            DataContext = aboutViewModel; 
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<TestEvent>().Publish("From About User Control");
         }

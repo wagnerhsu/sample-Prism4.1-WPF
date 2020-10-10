@@ -9,6 +9,10 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock Text="About" />
+        <StackPanel>
+            <TextBlock Text="About" />
+            <TextBlock Text="{Binding FileVersion}" />
+            <TextBlock Text="{Binding ProductVersion}" />
+        </StackPanel>
     </Grid>
 </UserControl>

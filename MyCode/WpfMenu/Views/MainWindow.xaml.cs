@@ -18,7 +18,7 @@ namespace WpfMenu.Views
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<TestEvent>().Subscribe(x =>
             {
-                statusTextBlock.Text = x + DateTime.Now.ToString();
+                statusTextBlock.Text += x + DateTime.Now.ToString();
             }, ThreadOption.UIThread);
         }
 
